@@ -39,13 +39,15 @@ describe('Reducers', () => {
 		});
 
 		it('should toggle todo item', () => {
-			var todos = [{
-				id: '123',
-				text: 'Get the mail',
-				completed: true,
-				createdAt: 456,
-				completedAt: 789
-			}];
+			var todos = [
+				{
+					id: '123',
+					text: 'Get the mail',
+					completed: true,
+					createdAt: 456,
+					completedAt: 789
+				}
+			];
 
 			var action = {
 				type: 'TOGGLE_TODO',
