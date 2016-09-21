@@ -3,8 +3,8 @@ var moment = require('moment');
 
 import TodoList from 'TodoList';
 import AddTodo from 'Addtodo';
+import TodoSearch from 'TodoSearch';
 
-var TodoSearch = require('TodoSearch');
 var uuid = require('node-uuid');
 var TodoAPI = require('TodoAPI');
 
