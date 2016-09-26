@@ -43,7 +43,7 @@ describe('Reducers', () => {
 		expect(res[0]).toEqual(action.todo);
 		});
 
-		it('should toggle todo item', () => {
+		it('should update todo item', () => {
 			var todos = [
 				{
 					id: '123',
@@ -54,17 +54,25 @@ describe('Reducers', () => {
 				}
 			];
 
+			var updates = {
+				completed: true,
+				completedAt: 789
+			};
+
 			var action = {
-				type: 'TOGGLE_TODO',
-				id: '123'
-			}
-		var res = reducers.todosReducer(df(todos), df(action));
+				type: 'UDPATE_TODO',
+				id: todos[0].id,
+				updates
+			};
 
-		expect(res[0].completed).toEqual(false);	
-		expect(res[0].completedAt).toEqual(undefined);
-		});
+			var res = reducers.todosReducer(df(todos), df(action));
 
-		it('should add exiting todos', () => {
+			expect(res[0].completed).toEqual(updates.completed);	
+			expect(res[0].completedAt).toEqual(updates.completedAt);
+			expect(res[0].text).toEqual(todos[0].text);
+			});
+
+		it('should add existing todos', () => {
 		var todos = [{
 			id: '111',
 			text: 'Walk the dog',
