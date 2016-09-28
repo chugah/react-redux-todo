@@ -8,9 +8,29 @@ FOR FOUNDATION - SASS
 @include foundation-everything;
 
 Components
+@import "components/callout-auth"
 @import "components/page-title"
+@import "components/page-actions"
+
 
 */
+
+.callout-auth {
+	background-color: #FAFAFA;
+	border: 1px solid #FAFAFA;
+	padding: 2rem;
+	text-align: center;
+}
+
+/*.callout-auth h3, p {
+	margin-bottom: 2rem;
+}*/
+
+.page-actions {
+	display: flex;
+	justify-content: flex-end;
+	padding: 1rem 2rem 0 0;
+}
 
 .page-title {
 	margin: 0;
